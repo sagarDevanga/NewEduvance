@@ -1,32 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const attendeeDetails = (route, props) => {
-  const person = route.person;
-  const x = route.x;
-
-  hello.toString();
-  console.log(person);
-  console.log(x);
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.row1}>
-        {props.person['first_name']} {props.person['last_name']}{' '}
-      </Text>
-      <Text style={styles.row2}>Guests : {props.person['guests']}</Text>
-      <Text style={styles.row2}>Address : {props.person['address']}</Text>
-    </View>
-  );
+const person = {
+  id: 20,
+  first_name: 'Reece',
+  last_name: 'Hallibone',
+  age: 34,
+  is_professional: true,
+  guests: 2,
+  address:
+    'etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut',
 };
+
+class AttendeeDetails extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.row1}>
+          {person['first_name']} {person['last_name']}
+        </Text>
+        <Text>Guests : {person['guests']}</Text>
+        <Text>Address : {person['address']}</Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    marginBottom: 10,
-    borderWidth: 1,
-    zIndex: 10,
-    borderColor: '#dedede',
+    height: 100,
   },
   row1: {
     flex: 1,
@@ -40,4 +43,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default attendeeDetails;
+export default AttendeeDetails;
