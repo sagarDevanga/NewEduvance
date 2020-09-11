@@ -14,7 +14,6 @@ class AttendeesList extends Component {
   navigate = (person) => {
     this.props.navigation.navigate('AttendeeDetails', {
       person: person,
-      x: 10,
     });
   };
 
