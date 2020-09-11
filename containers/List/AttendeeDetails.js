@@ -1,19 +1,10 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const person = {
-  id: 20,
-  first_name: 'Reece',
-  last_name: 'Hallibone',
-  age: 34,
-  is_professional: true,
-  guests: 2,
-  address:
-    'etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut',
-};
-
 class AttendeeDetails extends Component {
   render() {
+    const person = this.props.route.params.person;
+
     return (
       <View style={styles.container}>
         <Text style={styles.row1}>
